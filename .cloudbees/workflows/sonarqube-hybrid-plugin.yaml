@@ -20,7 +20,7 @@ jobs:
         uses: cloudbees-io/checkout@v1
 
       - name: Setup sonarqube explicit scanner with community edition
-        uses: cloudbees-io/sonarqube-plugin-private@prefixed_hyphen_sonar_prop
+        uses: cloudbees-io/sonarqube-plugin@v1
         with:
           url: 'https://sonarqube.saas-preprod.beescloud.com'
           username: ${{ secrets.SONARQUBE_USERNAME }}
