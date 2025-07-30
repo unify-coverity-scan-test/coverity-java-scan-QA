@@ -3,9 +3,8 @@ kind: workflow
 name: Coverity scan for java
 
 on:
-  # push:
-  #   branches:
-  #     - 'master'
+  schedule:
+    - cron: 30 4 * * *
   workflow_dispatch:
 permissions:
   scm-token-own: read
