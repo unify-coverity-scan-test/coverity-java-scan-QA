@@ -21,7 +21,7 @@ jobs:
         uses: cloudbees-io/checkout@v1
 
       - name: Scan with Coverity on Polaris
-        uses: https://github.com/cloudbees-io/coverity-polaris-sast-scan-code@test
+        uses: https://github.com/cloudbees-io/coverity-polaris-sast-scan-code@v2
         with:
           server-url: ${{ vars.COVERITY_POLARIS_SERVER_URL }}
           api-token: ${{ secrets.COVERITY_POLARIS_TOKEN }}
