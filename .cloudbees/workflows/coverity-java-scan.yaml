@@ -1,25 +1,21 @@
 apiVersion: automation.cloudbees.io/v1alpha1
-kind: workflow 
+kind: workflow
 name: Coverity scan for java
-
 on:
   push:
     branches:
-      - 'master'
+      - master
   schedule:
     - cron: 55 19 * * 1-5
-  workflow_dispatch:
 permissions:
   scm-token-own: read
   scm-token-org: read
   id-token: write
-
 jobs:
   coverity-scan:
     steps:
       - name: checkout Source Code
         uses: cloudbees-io/checkout@v1
-
       - name: Scan with Coverity on Polaris
         uses: https://github.com/cloudbees-io/coverity-polaris-sast-scan-code@v2
         with:
